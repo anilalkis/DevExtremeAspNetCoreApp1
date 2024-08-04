@@ -1,0 +1,339 @@
+﻿ <div style="max-width:47%;margin-right:5px;display: inline-block;">
+    @(Html.DevExtreme().TreeList<Birim>()
+        .ID("tree-list")
+        .DataSource(ds => ds.Mvc()
+        .Controller("TreeListTasks")
+        .LoadAction("Tasks")
+        .UpdateAction("UpdateTask")
+        .InsertAction("InsertTask")
+        .DeleteAction("DeleteTask")
+        .Key("YoksisId")
+        )
+        .RemoteOperations(r => r.Filtering(true).Sorting(true).Grouping(true))
+        .KeyExpr("YoksisId")
+        .ParentIdExpr("UstYoksisId")
+        .HasItemsExpr("Has_Items")
+        .SearchPanel(seachPanel => seachPanel.Visible(true))
+        .HeaderFilter(headerFilter => headerFilter.Visible(true))
+        .Editing(editing => editing
+        .Mode(GridEditMode.Popup)
+        .AllowAdding(true)
+        .AllowUpdating(true)
+        .AllowDeleting(true)
+        .UseIcons(true)
+        .Popup(p => p
+        .Title("Department Info")
+        .ShowTitle(true)
+        .Width(700))
+        )
+        .ShowRowLines(true)
+        .ShowBorders(true)
+        .ColumnAutoWidth(true)
+        .WordWrapEnabled(true)
+        .Scrolling(scrolling => scrolling.Mode(TreeListScrollingMode.Standard))
+        .Paging(paging =>
+        {
+            paging.Enabled(true);
+            paging.PageSize(20);
+        })
+        .Pager(pager =>
+        {
+            pager.ShowPageSizeSelector(true);
+            pager.AllowedPageSizes(new[] { 5, 10, 20 });
+            pager.ShowInfo(true);
+        })
+        .Columns(columns =>
+        {
+            columns.AddFor(m => m.YoksisId).Visible(false);
+
+            columns.AddFor(m => m.Ad);
+
+            columns.AddFor(m => m.Durum);
+
+        })
+        .OnInitNewRow("treeList_onInitNewRow")
+        .FocusedRowEnabled(true)
+        .FocusedRowKey(107211)
+        .ShowBorders(true)
+        .OnInitialized("onTreeListInitialized")
+        .OnFocusedRowChanged("onFocusedRowChanged")
+        )
+</div>
+
+<div style="max-width:47%;display: inline-grid;">
+
+    
+    <div>
+        @(
+            Html.DevExtreme().TabPanel()
+                    .ID("tabpanel")
+                    .Items(items =>
+                    {
+                                items.Add()
+                        .Title("Personeller")
+                        .Template(
+                        @<text>
+                        @(Html.DevExtreme().DataGrid<PersonelGorev>()
+                        .ID("gridContainer1")
+                        .ShowBorders(true)
+                        .DataSource(d => d.Mvc()
+                        .Controller("DataGridMasterDetailAPI")
+                        .LoadAction("Get")
+                        .UpdateAction("UpdateGorev")
+                        .InsertAction("InsertGorev")
+                        .DeleteAction("DeleteGorev")
+                        .Key("PGID")
+                        )
+                        .Selection(s => s.Mode(SelectionMode.Single))
+                        .Editing(editing =>
+                        {
+                        editing.AllowAdding(true);
+                        editing.AllowDeleting(true);
+                        editing.AllowUpdating(true);
+                        editing.UseIcons(true);
+                        editing.Mode(GridEditMode.Popup);
+                        
+                        })
+
+                        .Columns(columns =>
+                        {
+                        columns.AddFor(m => m.Kisi.Ad);
+
+                        columns.AddFor(m => m.Kisi.Soyad);
+
+                        columns.AddFor(m => m.Kisi.Email);
+
+                        columns.AddFor(m => m.Tanim.Kategori);
+
+                        columns.AddFor(m => m.TanimId)
+                        .Lookup(lookup => lookup
+                        .DataSource(d => d.Mvc().Controller("KisilerDataGrid").LoadAction("GetTanimlar").Key("TanimId"))
+                        .DisplayExpr("Ad")
+                        .ValueExpr("TanimId")
+                        );
+
+                        columns.AddFor(m => m.BirimId)
+                        .Visible(false);
+
+                        })
+                        .OnInitialized("onDataGridInitialized")
+
+                        )
+                        </text>);
+
+
+
+                    
+
+                items.Add()
+                    .Title("Kararlar")
+                    .Template(
+                            
+                    @<text>
+                        @await Html.PartialAsync("KararlarDataGrid")    
+                    </text>);
+
+
+            })
+            .Width("100%")
+            .Height(418)
+            .AnimationEnabled(true)
+            .SwipeEnabled(true)
+            .TabsPosition(Position.Top)
+            .StylingMode(TabsStyle.Secondary)
+            .OnInitialized("onTabInitialized")
+            )
+    </div>
+
+
+    <div>
+        <form id="form" method="post" asp-action="Upload" asp-controller="File" enctype="multipart/form-data">
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-value">
+                        @(Html.DevExtreme().NumberBox()
+                            .Name("id")
+                            .ID("kararId")
+                            .Visible(true)
+                            .OnInitialized("onKararInitialized")
+                            )
+                    </div>
+                </div>
+            </div>
+            <div id="fileuploader-container">
+                @(Html.DevExtreme().FileUploader()
+                    .Name("file")
+                    .SelectButtonText("Select file")
+                    .LabelText("")
+                    .Accept("*")
+                    .UploadMode(FileUploadMode.UseForm)
+                    .InputAttr("aria-label", "Select file")
+                    )
+            </div>
+            
+            @(Html.DevExtreme().Button()
+                .ID("button")
+                .Text("Add File")
+                .Type(ButtonType.Success)
+                .UseSubmitBehavior(true)
+                )
+        </form>
+    </div>
+
+    
+
+</div>
+
+
+<script>
+    function treeList_onInitNewRow(e) {
+        e.data.Task_Status = "Not Started";
+        e.data.Task_Start_Date = new Date();
+        e.data.Task_Due_Date = new Date();
+    }
+</script>
+
+<script>
+    var treeList,
+        taskIdEditor,
+        dataGrid,
+        kararGrid,
+        tabPanel,
+        kararId,
+        GorevBirimIdFormInput,
+        KararBirimIdFormInput;
+
+
+    function onTabInitialized(e) {
+        tabPanel = e.component;
+        // // TabPanel bileşeninin örneğini alın
+        // var tabPanel = $("#tabpanel").dxTabPanel("instance");
+
+        // // TabPanel bileşenindeki tabları alın
+        // var items = tabPanel.option("items");
+        // items.forEach(function (item, index) {
+        //     tabPanel.option("selectedIndex", index);
+        // });
+    }
+
+    function onKararInitialized(e) {
+        kararId = e.component;
+    }
+
+    function onTaskIdEditorInitialized(e) {
+        taskIdEditor = e.component;
+    }
+
+    function onTaskIdEditorValueChanged(e) {
+        if (e.event && e.value > 0) {
+            treeList.option("focusedRowKey", e.value);
+        }
+    }
+
+    function onDataGridInitialized(e) {
+        dataGrid = e.component;
+    }
+
+    function onKararDataGridInitialized(e) {
+        kararGrid = e.component;
+    }
+
+    function onTreeListInitialized(e) {
+        treeList = e.component;
+    }
+
+    function onFocusedRowChangedKarar(e) {
+        var numberBox = $("#kararId").dxNumberBox("instance");
+        numberBox.option("value", kararGrid.option("focusedRowKey"));
+    }
+
+    document.getElementById("gridContainer1").querySelector(".dx-toolbar-item-content").addEventListener("click", function () {
+        alert("BirimId");
+    });
+
+    function getInputIdContaining(partialName) {
+        // Get all input elements
+        let inputs = document.getElementById("gridContainer1").querySelectorAll(".dx-state-invisible .dx-texteditor-input");
+        let pop = document.getElementsByClassName("dx-overlay-wrapper dx-popup-wrapper dx-datagrid-edit-popup dx-overlay-shader").length;
+
+        // Loop through each input element
+        for (let input of inputs) {
+            // Check if the id contains the specified partial name
+            if (input.id.includes(partialName) && (pop != 0)) {
+                input.value = treeList.option("focusedRowKey");
+                input.disabled = true;
+                return input.id;
+            }
+        }
+
+        // Return null if no matching id is found
+        return null;
+    }
+
+    function onFocusedRowChanged(e) {
+
+        var bid = treeList.option("focusedRowKey");
+
+        var tabPanel = $("#tabpanel").dxTabPanel("instance");
+
+        var selectedIndex = tabPanel.option("selectedIndex");
+
+        switch (selectedIndex) {
+            case 0:
+                dataGrid.filter(["BirimId", "=", parseInt(treeList.option("focusedRowKey"))]);
+                getInputIdContaining("BirimId");
+                // document.getElementById("dx_dx-07cd821c-1a4b-ed4c-c72b-61b173455d66_BirimId").value = treeList.option("focusedRowKey");
+
+                break;
+            case 1:
+                kararGrid.filter(["BirimId", "=", parseInt(treeList.option("focusedRowKey"))]);
+                getInputIdContaining("BirimId");
+                    
+                // KararBirimIdFormInput.value = treeList.option("focusedRowKey");
+
+                break;
+            default:
+                console.log("Unknown tab");
+                break;
+        }
+
+    }
+
+        function getFileUploaderInstance() {
+            return $("#file-uploader").dxFileUploader("instance");
+        }
+
+        function fileUploader_valueChanged(e) {
+            var files = e.value;
+            if (files.length > 0) {
+                $("#selected-files .selected-item").remove();
+
+                $.each(files, function (i, file) {
+                    var $selectedItem = $("<div />").addClass("selected-item");
+                    $selectedItem.append(
+                        $("<span />").html("Name: " + file.name + "<br/>"),
+                        $("<span />").html("Size " + file.size + " bytes" + "<br/>"),
+                        $("<span />").html("Type " + file.type + "<br/>"),
+                        $("<span />").html("Last Modified Date: " + file.lastModifiedDate)
+                    );
+                    $selectedItem.appendTo($("#selected-files"));
+                });
+                $("#selected-files").show();
+            }
+            else
+                $("#selected-files").hide();
+        }
+
+        function acceptOption_changed(e) {
+            getFileUploaderInstance().option("accept", e.value);
+        }
+
+        function uploadMode_changed(e) {
+            getFileUploaderInstance().option("uploadMode", e.value);
+        }
+
+        function multipleOption_changed(e) {
+            getFileUploaderInstance().option("multiple", e.value);
+        }
+
+</script>

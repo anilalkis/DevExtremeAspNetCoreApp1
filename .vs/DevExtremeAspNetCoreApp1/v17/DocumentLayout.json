@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\repos2\\DevExtremeAspNetCoreApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|d:\\repos2\\devextremeaspnetcoreapp1\\devextremeaspnetcoreapp1\\views\\treelist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|solutionrelative:devextremeaspnetcoreapp1\\views\\treelist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|d:\\repos2\\devextremeaspnetcoreapp1\\devextremeaspnetcoreapp1\\controllers\\apicontrollers\\kararlardatagridcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|solutionrelative:devextremeaspnetcoreapp1\\controllers\\apicontrollers\\kararlardatagridcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|d:\\repos2\\devextremeaspnetcoreapp1\\devextremeaspnetcoreapp1\\views\\treelist\\dosyalardatagrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|solutionrelative:devextremeaspnetcoreapp1\\views\\treelist\\dosyalardatagrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|d:\\repos2\\devextremeaspnetcoreapp1\\devextremeaspnetcoreapp1\\views\\treelist\\kararlardatagrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|solutionrelative:devextremeaspnetcoreapp1\\views\\treelist\\kararlardatagrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|d:\\repos2\\devextremeaspnetcoreapp1\\devextremeaspnetcoreapp1\\controllers\\apicontrollers\\kisilerdatagridcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|solutionrelative:devextremeaspnetcoreapp1\\controllers\\apicontrollers\\kisilerdatagridcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|d:\\repos2\\devextremeaspnetcoreapp1\\devextremeaspnetcoreapp1\\controllers\\apicontrollers\\datagridmasterdetailapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|solutionrelative:devextremeaspnetcoreapp1\\controllers\\apicontrollers\\datagridmasterdetailapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|d:\\repos2\\devextremeaspnetcoreapp1\\devextremeaspnetcoreapp1\\controllers\\apicontrollers\\treelisttaskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85CE0C6-5BB0-4A24-84DA-0D31F94D69F4}|DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1.csproj|solutionrelative:devextremeaspnetcoreapp1\\controllers\\apicontrollers\\treelisttaskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Views\\TreeList\\Index.cshtml",
+              "RelativeDocumentMoniker": "DevExtremeAspNetCoreApp1\\Views\\TreeList\\Index.cshtml",
+              "ToolTip": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Views\\TreeList\\Index.cshtml",
+              "RelativeToolTip": "DevExtremeAspNetCoreApp1\\Views\\TreeList\\Index.cshtml",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAAAKUAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-09T10:25:17.711Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "KisilerDataGridController.cs",
+              "DocumentMoniker": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\KisilerDataGridController.cs",
+              "RelativeDocumentMoniker": "DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\KisilerDataGridController.cs",
+              "ToolTip": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\KisilerDataGridController.cs",
+              "RelativeToolTip": "DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\KisilerDataGridController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T11:19:22.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DosyalarDataGrid.cshtml",
+              "DocumentMoniker": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Views\\TreeList\\DosyalarDataGrid.cshtml",
+              "RelativeDocumentMoniker": "DevExtremeAspNetCoreApp1\\Views\\TreeList\\DosyalarDataGrid.cshtml",
+              "ToolTip": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Views\\TreeList\\DosyalarDataGrid.cshtml",
+              "RelativeToolTip": "DevExtremeAspNetCoreApp1\\Views\\TreeList\\DosyalarDataGrid.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T08:53:02.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataGridMasterDetailAPIController.cs",
+              "DocumentMoniker": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\DataGridMasterDetailAPIController.cs",
+              "RelativeDocumentMoniker": "DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\DataGridMasterDetailAPIController.cs",
+              "ToolTip": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\DataGridMasterDetailAPIController.cs",
+              "RelativeToolTip": "DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\DataGridMasterDetailAPIController.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAQwDEAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T10:35:32.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TreeListTasksController.cs",
+              "DocumentMoniker": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\TreeListTasksController.cs",
+              "RelativeDocumentMoniker": "DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\TreeListTasksController.cs",
+              "ToolTip": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\TreeListTasksController.cs",
+              "RelativeToolTip": "DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\TreeListTasksController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACAAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T08:15:41.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KararlarDataGrid.cshtml",
+              "DocumentMoniker": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Views\\TreeList\\KararlarDataGrid.cshtml",
+              "RelativeDocumentMoniker": "DevExtremeAspNetCoreApp1\\Views\\TreeList\\KararlarDataGrid.cshtml",
+              "ToolTip": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Views\\TreeList\\KararlarDataGrid.cshtml",
+              "RelativeToolTip": "DevExtremeAspNetCoreApp1\\Views\\TreeList\\KararlarDataGrid.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-29T09:55:43.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KararlarDataGridController.cs",
+              "DocumentMoniker": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\KararlarDataGridController.cs",
+              "RelativeDocumentMoniker": "DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\KararlarDataGridController.cs",
+              "ToolTip": "D:\\repos2\\DevExtremeAspNetCoreApp1\\DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\KararlarDataGridController.cs",
+              "RelativeToolTip": "DevExtremeAspNetCoreApp1\\Controllers\\ApiControllers\\KararlarDataGridController.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAswHoAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T08:08:02.128Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DevExtremeAspNetCoreApp1.props" />
+</Project>

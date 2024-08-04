@@ -1,0 +1,37 @@
+﻿@(Html.DevExtreme().DataGrid<Kisi>()
+    .DataSource(d => d.Mvc()
+        .Controller("KisilerDataGrid")
+        .LoadAction("GetAll")
+        .InsertAction("InsertKisi")
+        .UpdateAction("UpdateKisi")
+        .DeleteAction("DeleteKisi")
+        .Key("KisiId")
+    )
+    .RemoteOperations(true)
+    .Columns(columns => {
+        
+
+        columns.AddFor(m => m.Ad);
+
+        columns.AddFor(m => m.Soyad);
+
+        columns.AddFor(m => m.Email);
+
+        columns.AddFor(m => m.KullaniciAdi);
+
+    })
+    .FilterRow(f => f.Visible(true))
+    .HeaderFilter(f => f.Visible(true))
+    .GroupPanel(p => p.Visible(true))
+    .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+    .Width("80%")
+    .Height(600)
+    .ShowBorders(true)
+    .Editing(e => 
+        e.Mode(GridEditMode.Popup)
+        .AllowAdding(true)
+        .AllowDeleting(true)
+        .AllowUpdating(true)
+        .UseIcons(true))
+    .Grouping(g => g.AutoExpandAll(false))
+)

@@ -1,0 +1,48 @@
+﻿@(
+Html.DevExtreme().DataGrid<Karar>()
+.ID("gridContainer2")
+.ShowBorders(true)
+.DataSource(d => d.Mvc()
+.Controller("KararlarDataGrid")
+.LoadAction("Get")
+.UpdateAction("Put")
+.InsertAction("Post")
+.DeleteAction("Delete")
+.Key("Id")
+)
+.Selection(s => s.Mode(SelectionMode.Single))
+.Editing(editing =>
+{
+    editing.Mode(GridEditMode.Popup);
+    editing.AllowAdding(true);
+    editing.AllowDeleting(true);
+    editing.AllowUpdating(true);
+    editing.UseIcons(true);
+})
+
+.Columns(columns =>
+{
+    columns.AddFor(m => m.Tarih);
+
+    columns.AddFor(m => m.Aciklama);
+
+
+    columns.AddFor(m => m.BirimId)
+    .Visible(false);
+
+})
+.Scrolling(scrolling => scrolling.Mode(GridScrollingMode.Standard))
+.MasterDetail(md => md
+        .Enabled(true)
+        .Template(@<text>
+
+        @await Html.PartialAsync("DosyalarDataGrid")
+
+        </text>)
+    )
+.FocusedRowEnabled(true)
+.OnInitialized("onKararDataGridInitialized")
+.OnFocusedRowChanged("onFocusedRowChangedKarar")
+
+)
+

@@ -1,0 +1,28 @@
+﻿@(Html.DevExtreme().DataGrid<FilePath>()
+    .DataSource(d => d.Mvc()
+    .Controller("KararlarDataGrid")
+    .LoadAction("FileDetails")
+    .LoadParams(new { KararId = new JS("data.Id") })
+    .DeleteAction("DeleteFile")
+    .Key("FilePathId")
+    )
+    .Editing(editing =>
+    {
+        editing.Mode(GridEditMode.Row);
+        editing.AllowDeleting(true);
+        editing.UseIcons(true);
+    })
+    .ShowBorders(true)
+    .Scrolling(scrolling => scrolling.Mode(GridScrollingMode.Standard))
+    .Columns(m =>
+    {
+        m.AddFor(n => n.FilePathId)
+        .Caption("Dosya")
+        .CellTemplate(
+        @<text>
+            <a href="/File/Download/<%- data.FilePathId %>"> Dosya<%- data.FilePathId %> İndir </a>
+        </text>
+        );
+
+    })
+    )
